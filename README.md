@@ -55,3 +55,27 @@ Rand Index
 
 _Reinforcement Learning_
 How well the agent performs the task at hand.
+
+## Neural Networks Introduction
+
+A _perceptron_ is the computerized version of a biological neuron.  It is made up of inputs, weights, activation function, bias, and output (s).
+
+The _bias_ term is used to help the issue of where inputs are 0.
+
+```math
+x0w0 + x1w1 + b = y
+```
+
+_Neural Networks_ are networks of perceptrons that are composed of different layers (input, hidden, and output).  More complex networks can have different layers that will be explained later.
+
+_Activation Functions_ are used to determine if the neuron is "turned on" based on the weighted sum of the inputs.  _ReLu_ is one activation that generally has the best performance in a network.  Others include tanh, sigmod, and step.
+
+_Cost Functions_ are used to determine how far off the value of a neuron is from the expected value.  The most common cost function used is the _Cross Entropy_ cost function due to the faster learning that is achieved.  _Quadratic Cost_ is another cost function that can be used.
+
+_Gradient Descent_ is an optimization algorithm for finding the minimum of a function.
+
+_Backpropagation_ is used to calculate the error contribution of each neuron after a batch of data is processed.  It relies heavily on the chain rule to go back through the network and calculate the errors.
+
+A _Dense_ network is one where each neuron in a layer is connected to all of the neurons in the next layer.
+
+[Tensorflow Playground](https://playground.tensorflow.org)
