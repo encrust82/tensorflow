@@ -79,3 +79,29 @@ _Backpropagation_ is used to calculate the error contribution of each neuron aft
 A _Dense_ network is one where each neuron in a layer is connected to all of the neurons in the next layer.
 
 [Tensorflow Playground](https://playground.tensorflow.org)
+
+## TensorFlow Basics
+
+[TensorFlow](https://www.tensorflow.org/) is an open source library used to develop and train ML models.
+
+A _tensor_ is a fancy term for a n-dimensional array.
+
+TensorFlow can be used to perform operations such as addition and multiplication.  The more interesting use for it is developing neural networks and performing machine learning.
+
+A _graph_ is a sequence of inputs, operations, and outputs that produce some result.  Neural networks are graphs based on biological neurons.  
+
+_Variables_ hold the values of weights and biases throughout a session, and must be initialized.
+
+_Placeholders_ are initially empty and are used to feed in the actual training examples.  They must also be initialized.
+
+The _Estimator API_ is a high level API that can be used to solve machine learning problems.  There are other APIs that are similar such as Keras and Layers.
+
+In general,  the format to use the Estimator API follows:
+
+1) Define a list of feature columns
+2) Create the estimator model
+3) Create a data input function
+4) Call train, evaluate, and predict methods on the estimator object
+
+**A good sign that you are not overfitting is that your training data loss is similar to your eval loss**
+
