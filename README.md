@@ -105,3 +105,50 @@ In general,  the format to use the Estimator API follows:
 
 **A good sign that you are not overfitting is that your training data loss is similar to your eval loss**
 
+## Convolutional Neural Networks (CNNs)
+
+_Xavier (Glorot) Initialization:_  Uniform/normal which draws weights from a distribution with zero mean and a specific variance.
+
+_Learning Rate:_ Defines the step size during gradient descent.
+
+_Batch Size:_ Batches allow us to use stochastic gradient descent.  Smaller = less representative of data and larger = longer training time.
+
+_Second-Order Behaviour_ of the gradient decent allows us to adjust our learning rate based off the rate of descent.  i.e. AdaGrad, RMSProp, Adam.
+
+_Unstable / Vanishing Gradients_: As you increase the number of layers in a network, the layers towards the input will be affected less by the error calculation occurring at the output as you go backwards through the network.  Initialization and normalization help to mitigate these issues.
+
+_Overfitting:_ occurs when you train a model exactly to a dataset.  (Error is very low on training data, but high on test data).  You can use _L1/L2 Regularization_ to add a penalty for larger weights in the model (mitigating overfitting).  
+
+_Underfitting:_ occurs when you don't train a model enough to get the results you require on a new dataset. (High error on training and test data).
+
+_Dropout:_ remove random neurons during training.  This also helps mitigate overfitting.
+
+_Expanding Data:_ artifically expands data by adding noise, tilting images, adding low white noise to sound data, etc.
+
+A class data set in Deep Learning is the _MNIST data set._  This is a dataset made up of drawn characters, and can be used to recognize characters from text.  
+
+TensorFlow has easy access to the data set with 55,000 training images, 10,000 test images, and 5,000 validation images.
+
+A single digit image can be represented as an array (values between 0 and 1, grayscale), specifically 28x28 pixels.  We can flatten the array into a 1-D vector of 784 numbers.  However, flattening an array causes us to lose the relationship of a pixel to its neighboring pixels.
+
+**We can think of the entire group of the 55,000 images as a tensor (an n-dimensional array).**
+
+For the labels, we will use _One Hot Encoding_.  One Hot Encoding changes string labels into a single array.  The label is represented based off the index position of the label array (It will be a 1 at the index location, and 0 everywhere else).  For the MNIST training set, it will become a 2-d array (10, 55000).
+
+A _Softmax Regression_ returns a list of values between 0 and 1 that add up to 1.  This means we can use this as a list of probabilities (that add up to 1).  _Softmax_ is an activation function that we will use as part of the Softmax Regression algorithm.
+
+## Essential Machine Learning Q/A
+
+1. What's the tradeoff between **bias** and **variance**?
+
+_Bias is error due to erroneous or overly simplistic assumptions in the learning algorithm you're using.  This can lead to the model underfitting your data, making it hard for it to have high predictive accuracy and for you to generalize your knowledge from the training set to the test set._
+
+_Variance is error due to too much complexity in the learning algorithm you are using.  This leads to the algorithm being highly sensitive to high degrees of variation in your training data, which can lead you model to overfit the data.  You'll be carrying too much noise from your training data for your model to very useful for your test data._
+
+2. What is the difference between supervised and unsupervised machine learning?
+
+_Supervised learning requires training labeled data.  Unsupervised learning does not require labeled data._
+
+3. How is **KNN** different from **k-means clustering**?
+
+*K-Nearest Neighbor (KNN) is a supervised classification algorithm, while k-means clustering is an unsupervised clustering algorithm.  Since KNN is a supervised classifiation algorithm it will need labeled data.  K-meanss clustering is unsupervised meaning it does not need labeled data.. and instead works off of clustering.*
