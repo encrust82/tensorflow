@@ -137,6 +137,41 @@ For the labels, we will use _One Hot Encoding_.  One Hot Encoding changes string
 
 A _Softmax Regression_ returns a list of values between 0 and 1 that add up to 1.  This means we can use this as a list of probabilities (that add up to 1).  _Softmax_ is an activation function that we will use as part of the Softmax Regression algorithm.
 
+_Tensors_ are n-dimensional arrays that we build up to:
+
+1) Scaler - 3
+2) Vector - [3,4,5]
+3) Matrix - [[3,4], [5,6], [7,8]]
+4) Tensor - [[ [1,2], [3,4]], [[5,6], [7,8]]]
+
+Tensors make it really convenient to feed in sets of images into a model (I,H,W,C):
+
+I: Images
+H: Height of image in pixels
+W: Width of image in pixels
+C: Color Channels -- 1-Grayscale, 3-RGB
+
+Dense Layer: Every unit is connected to every unit in the next layer.
+
+Convolutional Layer: Each unit is connected to a small number of nearby units in the next layer.
+
+Convolutional Neural Networks (CNNs):  Help reduce the number of parameters.  Additionally, pixels that are nearby each other are much more related than pixels that are far apart.  Each CNN layer looks at an increasingly larger part of the image.  Having units only connected to nearby units also aids in invariance.  CNNs also help with regularization, limiting the search of weights ot the size of the convolution.
+
+_Filters:_ Are represented by 2-d grids.  Filters detect certain features in an image (i.e. edges).
+
+_Pooling Layers:_ Subsample the input image, which reduces the memory use and computer load as well as reducing the number of parameters.
+
+A _kernel_ is a matrix of values that can be used to perform convolutions.
+
+_Dropout_ can be thought of as a form of regularization to help prevent overfitting.  During training, units are randomly dropped, along with their connections.
+
+Some famous CNNS include:
+
+1) LeNet-5 by Yann LeCun
+2) AlexNet by Alex Krizhevsky et al.
+3) GoogLeNet by Szegedy at Google Research
+4) ResNet by Kaiming He et al.
+
 ## Essential Machine Learning Q/A
 
 1. What's the tradeoff between **bias** and **variance**?
